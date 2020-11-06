@@ -40,27 +40,41 @@ _If you run into any problems or have any questions please contact me via [email
 | **Program Assigns Characters Numeric Values** | Input: "pants" | Output: "3 1 1 1 1" |
 | **Program Sums Character Values**| Input: "3 1 1 1 1" | Page Displays: 7 |
 
-Describe: PizzaOrder();
+! Describe: PizzaOrder();
 
 Test: This will correctly create and instance of PizzaOrder
 Code: let newOrder = new PizzaOrder("Kaila","large");
 Expect: newOrder.name.toEqual("Kaila")
 
-Describe: PizzaOrder.pushToppings()
+
+! Describe: PizzaOrder.pushToppings()
 
 Test: This will push topping values to array
 Expect: newOrder.pushToppings().toEqual(newOrder.toppings = [1 , 2, 1]);
 
-Describe: PizzaOrder.addToppings();
+
+! Describe: PizzaOrder.addToppings();
 
 Test: This will add topping values together
 Code: newOrder.toppings = [1 , 2, 1];
 Expect: newOrder.addToppings().toEqual(4)
 
+! Describe: PizzaOrder.addSize(num);
+
+Test: This will add value to this.size
+Code: let size = 16;
+Expect: newOrder.addSize(16).toEqual(16);
+
+
 Describe: PizzaOrder.totalPrice();
 
-Test:
-Expect:
+Test: This will add this.toppings and this.size values.
+Code: let this.toppings = 4
+Code: let this.size = 16
+Expect: newOrder.totalPrice(4, 16).toEqual(20)
+
+Test: This will push the value to this.price
+Expect: newOrder.price.toEqual(20)
 
 ## Technologies Used
 
