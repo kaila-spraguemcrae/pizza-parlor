@@ -3,43 +3,44 @@ function PizzaOrder (name,size) {
   this.name = name;
   this.size = size;
   this.toppings = []; //the parseFloated values will be pushed to array
-  this.price = 0;
+  this.price = Number;
 }
 
 PizzaOrder.prototype.pushToppings = function() {
-  this.toppings.push(toppings);
-  console.log(newOrder.toppings);
+  for(i=0; i < toppings.length; i++) {
+    this.toppings.push(toppings[i]);
+  }
 }
 
 function add (a,b) {
   return a + b;
 }
 
+// function addToppings()
 // Describe: PizzaOrder.addToppings();
 
 // Test: This will add topping values together
 // Code: newOrder.toppings = [1.50 , 2.00, 1.75];
 // Expect: newOrder.addToppings().toEqual(5.25)
 
-// PizzaOrder.prototype.addToppings = function() {
-//   let toppingTotal = this.toppings.reduce(function(a, b){return a + b});
-//   this.toppings.push(toppingTotal);
-//   console.log(newOrder.toppings);
-// }
+PizzaOrder.prototype.addToppings = function() {
+  let sum = this.toppings.reduce(function(a, b){
+    return a + b});
+  console.log(sum);
+  // this.toppings = toppingTotal;
+  console.log("addToppings: " + newOrder.toppings);
+}
 
 PizzaOrder.prototype.totalPrice = function() {
   this.price = this.size + this.toppings;
 }
- function add (a,b) {
-   return a + b;
- }
 
 let newOrder = new PizzaOrder ("Kaila", "large",);
 
-let toppings = [1.50, 2.00, 1.75];
+let toppings = (1, 2, 1);
 
 newOrder.pushToppings();
-// newOrder.addToppings();
+newOrder.addToppings();
 
 /*toppings:
 extra motzerella cheese
