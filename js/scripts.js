@@ -11,13 +11,10 @@ PizzaOrder.prototype.addSize = function(num) {
   this.size = num
 }
 
-PizzaOrder.prototype.pushToppings = function() {
+PizzaOrder.prototype.addToppings = function() {
   for(i=0; i < toppings.length; i++) {
     this.toppings.push(toppings[i]);
   }
-}
-
-PizzaOrder.prototype.addToppings = function() {
   let sum = this.toppings.reduce(function(a, b){
     return a + b});
   this.toppings = sum;
@@ -36,7 +33,6 @@ let toppings = [1, 2, 1];
 
 let size = 16
 
-newOrder.pushToppings();
 newOrder.addToppings();
 newOrder.addSize(size);
 newOrder.totalPrice();

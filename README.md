@@ -47,13 +47,10 @@ Code: let newOrder = new PizzaOrder("Kaila","large");
 Expect: newOrder.name.toEqual("Kaila")
 
 
-Describe: PizzaOrder.pushToppings()
+Describe: PizzaOrder.addToppings()
 
 Test: This will push topping values to array
 Expect: newOrder.pushToppings().toEqual(newOrder.toppings = [1 , 2, 1]);
-
-
-Describe: PizzaOrder.addToppings();
 
 Test: This will add topping values together
 Code: newOrder.toppings = [1 , 2, 1];
