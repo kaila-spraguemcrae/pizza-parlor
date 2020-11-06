@@ -46,6 +46,16 @@ Test: This will correctly create and instance of PizzaOrder
 Code: let newOrder = new PizzaOrder("Kaila","large");
 Expect: newOrder.name.toEqual("Kaila")
 
+Describe: PizzaOrder.totalToppings();
+
+Test: This will add topping values together
+Code: newOrder.toppings = [1.50 , 2.00, 1.75];
+Expect: newOrder.totalToppings().toEqual(5.25)
+
+Describe: PizzaOrder.totalPrice();
+
+Test:
+Expect:
 
 ## Technologies Used
 
