@@ -1,6 +1,6 @@
 # _Pizza Parlor_
 
-#### _This webpage allows a user to select a pizza, 11.06.2020_
+#### _This webpage allows a user to build their own pizza, 11.06.2020_
 
 #### By _**Kaila Sprague**_
 
@@ -30,15 +30,21 @@ _Go to my GitHub repository here, [https://guthub.com/kaila.spraguemcrae/pizza-p
 
 _If you run into any problems or have any questions please contact me via [email](mailto:kaila.sprague@icloud.com)._
 
+## TDD Specifications Table:
+
+| Test | Input | Output |
+| :------------- | :------------- | :------------- |
+| **Pizza Order Info** |||
+| This will correctly create and instance of PizzaOrder name | Zack | Zack |
+| **Pizza Toppings** |||
+| This will convert user selection in to a total topping cost | cheese & tomato | 2.50 | 
+| **Pizza Size**|||
+| This will convert user size selection into size price | medium | 12.99 |
+| **Pizza Price Total**|||
+| This will add pizza size and toppings costs | 2.50, 12.99 | 15.49 |
+|
+
 ## Specs:
-| Spec | Input | Output |
-| :-------------     | :------------- | :------------- |
-| **Homepage** | User accesses localhost:5004 | Homepage with user input form |
-| **Program Gathers User Input** | User input: "pants" | Output: "pants" |
-| **Program Removes Spaces from User Input**| User Input: "pants pants" | Output: "pantspants" |
-| **Program Removes Punctuation from User Input**| Input: "p#an^t@s  /p(ant%s" | Output: "pantspants" |
-| **Program Assigns Characters Numeric Values** | Input: "pants" | Output: "3 1 1 1 1" |
-| **Program Sums Character Values**| Input: "3 1 1 1 1" | Page Displays: 7 |
 
 Describe: PizzaOrder();
 

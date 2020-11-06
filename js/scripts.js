@@ -37,18 +37,4 @@ newOrder.addToppings();
 newOrder.addSize(size);
 newOrder.totalPrice();
 
-/*toppings:
-extra motzerella cheese
-ricotta cheese
-asiago cheese
-tomato silced
-tomato diced
-onion
-muschroom
-chopped garlic
-rosted garlic
-black olives
-*/
-
-
 //user interface logic
