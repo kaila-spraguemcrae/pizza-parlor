@@ -27,20 +27,35 @@ PizzaOrder.prototype.totalPrice = function() {
 
 //BELOW WILL BE LINKED TO HTML INPUTS:: 
 
-let newOrder = new PizzaOrder ("Kaila", "large",);
+// let newOrder = new PizzaOrder ("Kaila", "large",);
 
-let toppings = [1, 2, 1];
+// let toppings = [1, 2, 1];
 
-let size = 16
+// let size = 16
 
-newOrder.addToppings();
-newOrder.addSize(size);
-newOrder.totalPrice();
+// newOrder.addToppings();
+// newOrder.addSize(size);
+// newOrder.totalPrice();
 
 //user interface logic
 
+let toppings = [];
+
 $(document).ready(function(){
+  $("form#order").submit(function(event){
+    event.preventDefault();
+    
+//input for name
 
+//input for size
 
+//input for toppings
+    $("input:checkbox[name=toppings]:checked").each(function(){
+      const toppingChoice = parseFloat($(this).val());
+      toppings.push(toppingChoice);
+    });
+  });
   
+
 });
+
