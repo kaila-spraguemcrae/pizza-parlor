@@ -49,13 +49,13 @@ Expect: newOrder.name.toEqual("Kaila")
 Describe: PizzaOrder.pushToppings()
 
 Test: This will push topping values to array
-Expect: newOrder.pushToppings().toEqual(newOrder.toppings = [1.50 , 2.00, 1.75]);
+Expect: newOrder.pushToppings().toEqual(newOrder.toppings = [1 , 2, 1]);
 
 Describe: PizzaOrder.addToppings();
 
 Test: This will add topping values together
-Code: newOrder.toppings = [1.50 , 2.00, 1.75];
-Expect: newOrder.addToppings().toEqual(5.25)
+Code: newOrder.toppings = [1 , 2, 1];
+Expect: newOrder.addToppings().toEqual(4)
 
 Describe: PizzaOrder.totalPrice();
 

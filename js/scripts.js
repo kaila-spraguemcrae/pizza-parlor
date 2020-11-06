@@ -12,32 +12,19 @@ PizzaOrder.prototype.pushToppings = function() {
   }
 }
 
-function add (a,b) {
-  return a + b;
-}
-
-// function addToppings()
-// Describe: PizzaOrder.addToppings();
-
-// Test: This will add topping values together
-// Code: newOrder.toppings = [1.50 , 2.00, 1.75];
-// Expect: newOrder.addToppings().toEqual(5.25)
-
 PizzaOrder.prototype.addToppings = function() {
   let sum = this.toppings.reduce(function(a, b){
     return a + b});
-  console.log(sum);
-  // this.toppings = toppingTotal;
-  console.log("addToppings: " + newOrder.toppings);
+  this.toppings = sum;
 }
 
-PizzaOrder.prototype.totalPrice = function() {
-  this.price = this.size + this.toppings;
-}
+// PizzaOrder.prototype.totalPrice = function() {
+//   this.price = this.size + this.toppings;
+// }
 
 let newOrder = new PizzaOrder ("Kaila", "large",);
 
-let toppings = (1, 2, 1);
+let toppings = [1, 2, 1];
 
 newOrder.pushToppings();
 newOrder.addToppings();
