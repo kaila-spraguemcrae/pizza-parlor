@@ -1,7 +1,8 @@
 //bussiness logic
 
-function PizzaOrder (name,size) {
-  this.name = name;
+function PizzaOrder (firstName, lastName, size) {
+  this.firstName = firstName;
+  this.lastName = lastName
   this.size = size;
   this.toppings = []; //the parseFloated values will be pushed to array
   this.price = 0;
@@ -21,7 +22,8 @@ PizzaOrder.prototype.addToppings = function() {
 }
 
 PizzaOrder.prototype.totalPrice = function() {
-  this.price = this.size + this.toppings;
+  let result = this.size + this.toppings;
+  this.price = Math.round(result * 100)/ 100;
 }
 
 
@@ -38,22 +40,28 @@ PizzaOrder.prototype.totalPrice = function() {
 // newOrder.totalPrice();
 
 //user interface logic
-
 let toppings = [];
 
 $(document).ready(function(){
+
+  
   $("form#order").submit(function(event){
     event.preventDefault();
+    const inputtedFirstName = $("input#first-name").val();
+    const inputtedLastName = $("input#last-name").val();
+    const inputtedSize= parseFloat($("input[name='size']:checked").val());
     
-//input for name
-
-//input for size
-
-//input for toppings
     $("input:checkbox[name=toppings]:checked").each(function(){
       const toppingChoice = parseFloat($(this).val());
       toppings.push(toppingChoice);
     });
+    let newOrder = new PizzaOrder (inputtedFirstName, inputtedLastName, inputtedSize);
+    newOrder.addToppings();
+    newOrder.addSize(inputtedSize);
+    newOrder.totalPrice();
+    console.log(newOrder);
+    console.log(newOrder.toppings);
+    console.log(newOrder.price);
   });
   
 

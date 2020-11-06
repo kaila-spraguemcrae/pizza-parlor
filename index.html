@@ -29,13 +29,30 @@
           </div><!--row-->
         </div> <!--user-info-->
         <div class="pizza-size">
-          <label for="size">Select the size of your pizza:</label>
-          <select id="size" name="size">
-            <option value="6.99">Small 10"</option>
-            <option value="9.99">Medium 12"</option>
-            <option value="12.99">Large 14"</option>
-            <option value="15.99">Extra-Large 16"</option>
-          </select>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="6.99">
+              Small 10"
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="9.99"> 
+              Medium 12"
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="12.99">
+              Large 14"
+            </label>
+          </div> 
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="15.99">
+              Extra-Large 16"
+            </label>
+          </div>
         </div><!--size-->
         <div class="toppings">
           <h3>Cheese:</h3>
@@ -64,6 +81,11 @@
         <button type="submit" class="btn">Add to Cart</button>
       </div>
     </form>
+    <div class="cart">
+      <h3>Cart</h3>
+      <div id="cart-order">
+      </div>
+    </div>
   </div><!--container-->
 </body>
 </html>
