@@ -4,7 +4,7 @@ function PizzaOrder (name,size) {
   this.name = name;
   this.size = size;
   this.toppings = []; //the parseFloated values will be pushed to array
-  this.price = Number;
+  this.price = 0;
 }
 
 PizzaOrder.prototype.addSize = function(num) {
@@ -23,9 +23,9 @@ PizzaOrder.prototype.addToppings = function() {
   this.toppings = sum;
 }
 
-// PizzaOrder.prototype.totalPrice = function() {
-//   this.price = this.size + this.toppings;
-// }
+PizzaOrder.prototype.totalPrice = function() {
+  this.price = this.size + this.toppings;
+}
 
 
 //BELOW WILL BE LINKED TO HTML INPUTS:: 
@@ -39,6 +39,7 @@ let size = 16
 newOrder.pushToppings();
 newOrder.addToppings();
 newOrder.addSize(size);
+newOrder.totalPrice();
 
 /*toppings:
 extra motzerella cheese
