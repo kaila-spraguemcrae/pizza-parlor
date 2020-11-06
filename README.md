@@ -1,26 +1,26 @@
-# _{Application Name}_
+# _Pizza Parlor_
 
-#### _{Brief description of applicaton}, {Date of current version}_
+#### _This webpage allows a user to select a pizza, 11.06.2020_
 
-#### By _**{List of contributors}**_
+#### By _**Kaila Sprague**_
 
 ## Description
 
-_{Detailed description, its purpose and usage. What does it does and other information.}_
+_This weboage was created for week 4's independent project. It uses JavaScript contructors to save pizza choices as objects._
 
 ## Setup/Installation Requirements
 
 ### View Online
 
-_To view my live website, {Name of Page}, visit [https://kaila-spraguemcrae.github.io/FINISH-URL](https://kaila-spraguemcrae.github.io/FINISH-URL)_
+_To view my live website, {Name of Page}, visit [https://kaila-spraguemcrae.github.io/pizza-parlor](https://kaila-spraguemcrae.github.io/pizza-parlor)_
 
 ### Open Locally
 
-_Go to my GitHub repository here, {{[https://guthub.com/kaila.spraguemcrae/FINISH-URL](https://guthub.com/kaila.spraguemcrae/FINISH-URL),}} and click on the green 'Code' button to clone the repository, Open with GitHub Desktop OR Download the ZIP file_
+_Go to my GitHub repository here, [https://guthub.com/kaila.spraguemcrae/pizza-parlor](https://guthub.com/kaila.spraguemcrae/pizza-parlor), and click on the green 'Code' button to clone the repository, Open with GitHub Desktop OR Download the ZIP file_
 
 ##### To clone:
 1. _Push the green 'Clone' button and copy the URL._
-2. _Open Terminal or GitBash and input the command:_ `git clone {{https://github.com/kaila-spraguemcrae/FINISH-URL`}}
+2. _Open Terminal or GitBash and input the command:_ `git clone https://github.com/kaila-spraguemcrae/pizza-parlor`
 3. _To view the code, open the copied directory with Visual Studio Code or your preferred text editor by inputing the command `code .` in your terminal._
 4. _To view the website, open index.html in Chrome or your preferred browser._
 
@@ -29,6 +29,23 @@ _Go to my GitHub repository here, {{[https://guthub.com/kaila.spraguemcrae/FINIS
 ## Support and contact details
 
 _If you run into any problems or have any questions please contact me via [email](mailto:kaila.sprague@icloud.com)._
+
+## Specs:
+| Spec | Input | Output |
+| :-------------     | :------------- | :------------- |
+| **Homepage** | User accesses localhost:5004 | Homepage with user input form |
+| **Program Gathers User Input** | User input: "pants" | Output: "pants" |
+| **Program Removes Spaces from User Input**| User Input: "pants pants" | Output: "pantspants" |
+| **Program Removes Punctuation from User Input**| Input: "p#an^t@s  /p(ant%s" | Output: "pantspants" |
+| **Program Assigns Characters Numeric Values** | Input: "pants" | Output: "3 1 1 1 1" |
+| **Program Sums Character Values**| Input: "3 1 1 1 1" | Page Displays: 7 |
+
+Describe: PizzaOrder();
+
+Test: This will correctly create and instance of PizzaOrder
+Code: let newOrder = new PizzaOrder("Kaila","large");
+Expect: newOrder.name.toEqual("Kaila")
+
 
 ## Technologies Used
 
