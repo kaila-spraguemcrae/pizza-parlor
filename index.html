@@ -7,17 +7,60 @@
   <link href="css/styles.css" rel="stylesheet" type="text/css">
   <script src="js/jquery-3.5.1.js"></script>
   <script src="js/scripts.js"></script>
-  <title></title>
+  <title>Pizza Parlor</title>
 </head>
 
 <body>
   <div class="container">
     <h1>Pizza Parlor</h1>
-    <h3>Make-Your-Own</h3>
-    <form id="toppings">
+    <h2>Make-Your-Own</h2>
+    <form id="order">
       <div class="form-group">
-        <input type="checkbox" name="topping1" value="1.50"> extra cheese <br>
-        <!--the value will be set to the price of the topping and then parseFloat it in JavaScript-->
+        <div class="user-info">
+          <div class="row">
+            <div class="col-6">
+              <label for="first-name">First Name</label>
+              <input id="first-name" class="form-control" type="text" placeholder="First Name">
+            </div>
+            <div class="col-6">
+              <label for="last-name">Last Name</label>
+              <input id="last-name" class="form-control" type="text" placeholder="Last Name">
+            </div>
+          </div><!--row-->
+        </div> <!--user-info-->
+        <div class="pizza-size">
+          <label for="size">Select the size of your pizza:</label>
+          <select id="size" name="size">
+            <option value="6.99">Small 10"</option>
+            <option value="9.99">Medium 12"</option>
+            <option value="12.99">Large 14"</option>
+            <option value="15.99">Extra-Large 16"</option>
+          </select>
+        </div><!--size-->
+        <div class="toppings">
+          <h3>Cheese:</h3>
+          <input type="checkbox" name="motzerella" value="1.50"> moterella cheese <br>
+          <input type="checkbox" name="ricotta" value="1.50"> ricotta cheese<br>
+          <input type="checkbox" name="asiago" value="1.75"> asiago cheese<br>
+          <h3>Veggies:</h3>
+          <input type="checkbox" name="tom-slice" value="0.75"> tomoto slices<br>
+          <input type="checkbox" name="tom-dice" value="0.75"> tomato diced<br>
+          <input type="checkbox" name="onion" value="0.75"> red onions<br>
+          <input type="checkbox" name="mushroom" value="0.75"> mushroom<br>
+          <input type="checkbox" name="gar-chop" value="0.75"> chopped garlic<br>
+          <input type="checkbox" name="gar-roast" value="1.50"> roasted garlic<br>
+          <input type="checkbox" name="olive" value="0.75"> black olives<br>
+          <input type="checkbox" name="basil" value="1.50"> basil<br>
+          <input type="checkbox" name="spinnach" value="0.75"> spinnach<br>
+          <input type="checkbox" name="artichoke" value="1.75"> artichoke hearts<br>
+          <h3>Meats:</h3>
+          <input type="checkbox" name="peperonni" value="1.50"> peperonni<br>
+          <input type="checkbox" name="sausage" value="1.75"> italian sausage<br>
+          <input type="checkbox" name="ham" value="0.75"> ham<br>
+          <input type="checkbox" name="bacon" value="1.75"> bacon<br>
+          <input type="checkbox" name="chicken" value="1.50"> grilled chicken<br>
+          <input type="checkbox" name="anchovy" value="1.75"> anchovies<br>
+        </div>
       </div>
     </form>
   </div><!--container-->
@@ -26,14 +69,7 @@
 
 
 <!--toppings:
-extra motzerella cheese
-ricotta cheese
-asiago cheese
-tomato silced
-tomato diced
-onion
-muschroom
-chopped garlic
+c
 rosted garlic
 black olives-->
 

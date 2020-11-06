@@ -38,3 +38,9 @@ newOrder.addSize(size);
 newOrder.totalPrice();
 
 //user interface logic
+
+$(document).ready(function(){
+
+
+  
+});
