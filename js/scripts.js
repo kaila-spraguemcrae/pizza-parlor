@@ -1,7 +1,13 @@
 //bussiness logic
-function PizzaOrder {
-
+function PizzaOrder (name,size,toppings) {
+  this.name = name;
+  this.size = size;
+  this.toppings = toppings;
+  this.price = [];
 }
+
+
+
 
 
 
