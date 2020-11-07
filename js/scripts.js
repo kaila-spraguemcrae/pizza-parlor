@@ -70,7 +70,7 @@ Pizza.prototype.totalPrice = function() {
 
 let newOrder = new UserOrder();
 let toppingsPrice = [];
-let toppingsName= []; 
+let toppingsName = []; 
 
 function displayOrderDetails(newOrderToDisplay) {
   let userCart = $("#cart-order");
@@ -83,14 +83,10 @@ function displayOrderDetails(newOrderToDisplay) {
 
 function showPizza(pizzaId) {
   const pizza = newOrder.findPizza(pizzaId);
-
   $("#show-pizza-info").show();
   $(".display-size").html(pizza.size);
-  $(".display-toppings").html(pizza.toppingsName + ", ");
   $(".display-price").html(pizza.price);
-
-
-  
+  $(".display-toppings").html(pizza.toppingsName.join(", "));
 }
 
 function attachContactListeners() {
@@ -110,6 +106,8 @@ $(document).ready(function(){
   $("#addAnother").click(function(){
     $(".create-pizza").show();
     $(".cart").hide();
+    $("#show-pizza-info").hide();
+    newOrder.priceArr = [];
   });
 
   $("#submitOrder").click(function(){
@@ -132,6 +130,7 @@ $(document).ready(function(){
       toppingsName.push(splitToppings[0]);
       toppingsPrice.push(parseFloat(splitToppings[1]));
     });
+
     let newPizza = new Pizza(inputtedFirstName, inputtedLastName, inputtedSize, inputtedSizePrice);
 
     newPizza.addToppings();
@@ -142,12 +141,15 @@ $(document).ready(function(){
     displayOrderDetails(newOrder);
     
     $(".userName").text(newOrder.pizzas[0].firstName);
-    $(".total").text("$"+newOrder.totalPrice);
+    $(".total").text("$" + newOrder.totalPrice);
 
     $("form#order")[0].reset();
+
     $(".cart").show();
     $(".create-pizza").hide();
 
+    toppingsPrice = [];
+    toppingsName = [];
 
   });
   
