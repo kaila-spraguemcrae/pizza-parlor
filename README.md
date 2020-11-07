@@ -42,7 +42,9 @@ _If you run into any problems or have any questions please contact me via [email
 | This will convert user size selection into size price | medium | 12.99 |
 | **Pizza Price Total**|||
 | This will add pizza size and toppings costs | 2.50, 12.99 | 15.49 |
-|
+| **Add Pizza to Order**|||
+| This will add newPizza object to newOrder| click 'add to Cart' | 'newPizza' object added to 'Cart' |
+
 
 ## Specs:
 
