@@ -1,9 +1,21 @@
 //bussiness logic
-// function Order {
-//   this.pizzas = [];
-// }
 
-function PizzaOrder (firstName, lastName, size, sizePrice) {
+function UserOrder() {
+  this.pizzas = [];
+  this.currentId= 0
+};
+
+UserOrder.prototype.addPizza = function(pizza){
+  pizza.id = this.assignId();
+  this.pizzas.push(pizza);
+}
+
+UserOrder.prototype.assignId = function() {
+  this.currentId += 1;
+  return this.currentId;
+}
+
+function Pizza (firstName, lastName, size, sizePrice) {
   this.firstName = firstName;
   this.lastName = lastName
   this.size = size;
@@ -13,11 +25,11 @@ function PizzaOrder (firstName, lastName, size, sizePrice) {
   this.price = 0;
 }
 
-PizzaOrder.prototype.addSizePrice = function(num) {
+Pizza.prototype.addSizePrice = function(num) {
   this.sizePrice = num
 }
 
-PizzaOrder.prototype.addToppings = function() {
+Pizza.prototype.addToppings = function() {
   for(i=0; i < toppingsPrice.length; i++) {
     this.toppingsPrice.push(toppingsPrice[i]);
     this.toppingsName.push(toppingsName[i]);
@@ -27,31 +39,24 @@ PizzaOrder.prototype.addToppings = function() {
   this.toppingsPrice = sum;
 }
 
-PizzaOrder.prototype.totalPrice = function() {
+Pizza.prototype.totalPrice = function() {
   let result = this.sizePrice + this.toppingsPrice;
   this.price = Math.round(result * 100)/ 100;
 }
 
-
-//BELOW WILL BE LINKED TO HTML INPUTS:: 
-
-// let newOrder = new PizzaOrder ("Kaila", "large",);
-
-// let toppings = [1, 2, 1];
-
-// let size = 16
-
-// newOrder.addToppings();
-// newOrder.addSize(size);
-// newOrder.totalPrice();
-
 //user interface logic
+
+let newOrder = new UserOrder();
 let toppingsPrice = [];
 let toppingsName= []; 
 
-// function displayOrderDetails()
-function splitSize() {
-
+function displayOrderDetails(newOrderToDisplay) {
+  let userCart = $("#cart-order");
+  let htmlForUserCart = "";
+  newOrderToDisplay.pizzas.forEach(function(pizza){
+    htmlForUserCart += "<li id" + pizza.id + ">" + pizza.size + "</li>";
+  });
+  userCart.html(htmlForUserCart);
 }
 
 $(document).ready(function(){
@@ -60,8 +65,6 @@ $(document).ready(function(){
     event.preventDefault();
     const inputtedFirstName = $("input#first-name").val();
     const inputtedLastName = $("input#last-name").val();
-
-    
     const sizeinput = $("input[name='size']:checked").val();
     console.log(sizeinput);
     const splitArr = sizeinput.split(" ");
@@ -76,14 +79,16 @@ $(document).ready(function(){
       toppingsName.push(splitToppings[0]);
       toppingsPrice.push(parseFloat(splitToppings[1]));
     });
-    let newOrder = new PizzaOrder(inputtedFirstName, inputtedLastName, inputtedSize, inputtedSizePrice);
+    let newPizza = new Pizza(inputtedFirstName, inputtedLastName, inputtedSize, inputtedSizePrice);
 
-    newOrder.addToppings();
-    newOrder.addSizePrice(inputtedSizePrice);
-    newOrder.totalPrice();
+    newPizza.addToppings();
+    newPizza.addSizePrice(inputtedSizePrice);
+    newPizza.totalPrice();
+    newOrder.addPizza(newPizza);
+    displayOrderDetails(newOrder);
+    console.log(newOrder);
     
-    
-    
+    $("form#order")[0].reset();
   });
   
 });
