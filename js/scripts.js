@@ -60,7 +60,11 @@ function displayOrderDetails(newOrderToDisplay) {
 }
 
 $(document).ready(function(){
-
+  $("#next").click(function(){ 
+    $(".create-pizza").show();
+    $("user-info").hide();
+  });
+  
   $("form#order").submit(function(event){
     event.preventDefault();
     const inputtedFirstName = $("input#first-name").val();
