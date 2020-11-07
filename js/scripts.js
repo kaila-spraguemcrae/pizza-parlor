@@ -82,7 +82,7 @@ $(document).ready(function(){
     newOrder.addSizePrice(inputtedSizePrice);
     newOrder.totalPrice();
     
-    console.log(newOrder);
+    
     
   });
   
