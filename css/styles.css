@@ -1,4 +1,68 @@
-/*custom styles*/
+.container {
+  margin: 8%;
+}
+
+body {
+  font-family: 'Source Code Pro', monospace;
+}
+
+.jumbotron {
+  background-color: #dd3c27;
+}
+
+.jumbotron h1 {
+  font-size: 80px;
+}
+
 .create-pizza {
   display: none;
+}
+
+.cart {
+  display: none;
+}
+
+.order-details {
+  display: none;
+}
+
+.make-header {
+  margin-bottom: 10px;
+}
+
+.pizza-img {
+  width: 80%;
+  border-radius: 5px;
+}
+.make-header h2 {
+  margin-top: 90px;
+  font-size: 45px;
+}
+
+#next {
+  background-color: #dd3c27;
+  margin: 20px 10px 10px 20px;
+}
+
+.btn-dark {
+  background-color: #dd3c27 !important;
+  margin: 10px 10px 10px 5px;
+}
+
+.btn-warning {
+  margin: 10px 10px 10px 5px;
+}
+
+h4 {
+  background-color: #242323;
+  color: white;
+  padding: 8px;
+  padding-left: 12px;
+  letter-spacing: 5px;
+  font-size: 24px;
+}
+
+.card-text {
+  padding: 8px;
+  font-size: 16px;
 }

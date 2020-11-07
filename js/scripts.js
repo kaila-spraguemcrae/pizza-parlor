@@ -2,7 +2,9 @@
 
 function UserOrder() {
   this.pizzas = [];
-  this.currentId= 0
+  this.currentId= 0;
+  this.priceArr = [];
+  this.totalPrice= 0;
 };
 
 UserOrder.prototype.addPizza = function(pizza){
@@ -13,6 +15,15 @@ UserOrder.prototype.addPizza = function(pizza){
 UserOrder.prototype.assignId = function() {
   this.currentId += 1;
   return this.currentId;
+}
+
+UserOrder.prototype.addTotal = function(){
+  for (i=0; i<this.pizzas.length; i++) {
+    this.priceArr.push(this.pizzas[i].price)
+  }
+  let result = this.priceArr.reduce(function(a, b){
+    return a + b});
+  this.totalPrice = Math.round(result * 100)/ 100;
 }
 
 function Pizza (firstName, lastName, size, sizePrice) {
@@ -62,7 +73,17 @@ function displayOrderDetails(newOrderToDisplay) {
 $(document).ready(function(){
   $("#next").click(function(){ 
     $(".create-pizza").show();
-    $("user-info").hide();
+    $(".user-info").hide();
+  });
+
+  $("#addAnother").click(function(){
+    $(".create-pizza").show();
+    $(".cart").hide();
+  });
+
+  $("#submitOrder").click(function(){
+    $(".order-details").show();
+    $(".cart").hide();
   });
   
   $("form#order").submit(function(event){
@@ -70,13 +91,10 @@ $(document).ready(function(){
     const inputtedFirstName = $("input#first-name").val();
     const inputtedLastName = $("input#last-name").val();
     const sizeinput = $("input[name='size']:checked").val();
-    console.log(sizeinput);
     const splitArr = sizeinput.split(" ");
-    console.log(splitArr);
     const inputtedSize = splitArr[0];
     const inputtedSizePrice = parseFloat(splitArr[1]);
-   console.log(splitArr[1]);
-    
+  
     $("input:checkbox[name=toppings]:checked").each(function(){
       const toppingChoice = $(this).val();
       const splitToppings = toppingChoice.split(" ");
@@ -87,12 +105,19 @@ $(document).ready(function(){
 
     newPizza.addToppings();
     newPizza.addSizePrice(inputtedSizePrice);
-    newPizza.totalPrice();
+    newPizza.totalPrice()
     newOrder.addPizza(newPizza);
+    newOrder.addTotal();
     displayOrderDetails(newOrder);
-    console.log(newOrder);
     
+    $(".userName").text(newOrder.pizzas[0].firstName);
+    $(".total").text("$"+newOrder.totalPrice);
+
     $("form#order")[0].reset();
+    $(".cart").show();
+    $(".create-pizza").hide();
+
+
   });
   
 });

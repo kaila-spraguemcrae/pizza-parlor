@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;1,500;1,700&display=swap" rel="stylesheet">
   <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
   <link href="css/styles.css" rel="stylesheet" type="text/css">
   <script src="js/jquery-3.5.1.js"></script>
@@ -11,89 +12,201 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="jumbotron">
     <h1>Pizza Parlor</h1>
-    <h2>Make-Your-Own</h2>
+  </div>
+
+  <div class="container">
+
+    <div class="make-header">
+      <div class="row">
+        <div class="col">
+          <img class="pizza-img" src="images/plain-pizza.jpg" alt="image of pizza">
+        </div>
+        <div class="col-7">
+          <h2>Make-Your-Own-Pizza:</h2>
+        </div>
+      </div>
+    </div>
+
     <form id="order">
       <div class="form-group">
+        <!--User Name Input-->
         <div class="user-info">
-          <div class="row">
-            <div class="col-6">
-              <label for="first-name">First Name</label>
-              <input id="first-name" class="form-control" type="text" placeholder="First Name">
-            </div>
-            <div class="col-6">
-              <label for="last-name">Last Name</label>
-              <input id="last-name" class="form-control" type="text" placeholder="Last Name">
-            </div>
-            <p id="next" class="btn">Next</p>
-          </div><!--row-->
-        </div> <!--user-info-->
-          <div class="create-pizza">
-            <div class="col-md-9">
-              <div class="pizza-size">
-                <div class="radio">
-                  <label>
-                    <input type="radio" name="size" value="Small 6.99">
-                    Small 10"
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Please enter your name</h4>
+              <div class="row">
+                <div class="col-6">
+                  <input id="first-name" class="form-control" type="text" placeholder="First Name">
+                </div>
+                <div class="col-6">
+                  <input id="last-name" class="form-control" type="text" placeholder="Last Name">
+                </div>
+                <p id="next" class="btn-dark btn-lg">Next</p>
+              </div><!--row-->
+            </div> <!--user-info-->
+          </div>
+        </div>
+
+        <div class="create-pizza">
+          <div class="pizza-size">
+            <div class="card">
+              <h4 class="card-title">Pizza Size</h4>
+              <div class="card-text">
+                <div class="custom-control custom-radio">
+                    <input type="radio" name="size" id="customRadio1" class="custom-control-input" value="Small 6.99" checked>
+                    <label class="custom-control-label" for= "customRadio1">
+                    Small 10" $6.99
                   </label>
                 </div>
-                <div class="radio">
-                  <label>
-                    <input type="radio" name="size" value="Medium 9.99"> 
-                    Medium 12"
+                <div class="custom-control custom-radio">
+                  <input type="radio" name="size" id="customRadio2" class="custom-control-input" value="Medium 9.99">
+                  <label class="custom-control-label" for= "customRadio2">
+                    Medium 12" $9.99
+                </label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" name="size" id="customRadio3" class="custom-control-input" value="Large 12.99">
+                  <label class="custom-control-label" for= "customRadio3">
+                    Large 14" $12.99
                   </label>
                 </div>
-                <div class="radio">
-                  <label>
-                    <input type="radio" name="size" value="Large 12.99">
-                    Large 14"
-                  </label>
-                </div> 
-                <div class="radio">
-                  <label>
-                    <input type="radio" name="size" value="Extra-Large 15.99">
-                    Extra-Large 16"
+                <div class="custom-control custom-radio">
+                  <input type="radio" name="size" id="customRadio4" class="custom-control-input" value="Extra-Large 15.99">
+                  <label class="custom-control-label" for= "customRadio4">
+                    Extra-Large 16" $15.99
                   </label>
                 </div>
               </div><!--size-->
-              <div class="toppings">
-                <h3>Cheese:</h3>
-                <input type="checkbox" name="toppings" value="motzerella 1.50"> moterella cheese <br>
-                <input type="checkbox" name="toppings" value="ricotta 1.50"> ricotta cheese<br>
-                <input type="checkbox" name="toppings" value="asiago 1.75"> asiago cheese<br>
-                <h3>Veggies:</h3>
-                <input type="checkbox" name="toppings" value="tomato-slices 0.75"> tomoto slices<br>
-                <input type="checkbox" name="toppings" value="tomato-diced 0.75"> tomato diced<br>
-                <input type="checkbox" name="toppings" value="onion 0.75"> red onions<br>
-                <input type="checkbox" name="toppings" value="mushroom 0.75"> mushroom<br>
-                <input type="checkbox" name="toppings" value="garlic-chopped 0.75"> chopped garlic<br>
-                <input type="checkbox" name="toppings" value="garlic-roasted 1.50"> roasted garlic<br>
-                <input type="checkbox" name="toppings" value="olives 0.75"> black olives<br>
-                <input type="checkbox" name="toppings" value="basil 1.50"> basil<br>
-                <input type="checkbox" name="toppings" value="spinnach 0.75"> spinnach<br>
-                <input type="checkbox" name="toppings" value="artichoke 1.75"> artichoke hearts<br>
-                <h3>Meats:</h3>
-                <input type="checkbox" name="toppings" value="peperonni 1.50"> peperonni<br>
-                <input type="checkbox" name="toppings" value="italian-sausage 1.75"> italian sausage<br>
-                <input type="checkbox" name="toppings" value="ham 0.75"> ham<br>
-                <input type="checkbox" name="toppings" value="bacon 1.75"> bacon<br>
-                <input type="checkbox" name="toppings" value="chicken 1.50"> grilled chicken<br>
-                <input type="checkbox" name="toppings" value="anchovies 1.75"> anchovies<br>
-              </div><!--toppings-->
-              <button type="submit" class="btn">Add to Cart</button>
             </div>
           </div>
-        </form>
-      
-      <div class="col-md-3">
-        <div class="cart">
-          <h3>Cart</h3>
+
+          <div class="toppings">
+
+            <div class="card">
+              <h4 class="card-title">Cheese:</h4>
+              <div class="card-text">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1" name="toppings" value="motzerella 1.50" checked> 
+                  <label class="custom-control-label" for="customCheck1">moterella cheese</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck2" name="toppings" value="ricotta 1.50"> 
+                  <label class="custom-control-label" for="customCheck2">ricotta cheese</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck3" name="toppings" value="asiago 1.75">
+                  <label class="custom-control-label" for="customCheck3">asiago cheese</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <h4 class="card-title">Veggies</h4>
+              <div class="card-text">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck4" name="toppings" value="tomato-slices 0.75">
+                  <label class="custom-control-label" for="customCheck4">tomoto slices</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck5" name="toppings" value="tomato-diced 0.75">
+                  <label class="custom-control-label" for="customCheck5">tomato diced</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck6" name="toppings" value="onion 0.75"><label class="custom-control-label" for="customCheck6">red onions</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck7" name="toppings" value="mushroom 0.75">
+                  <label class="custom-control-label" for="customCheck7">mushroom</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck8" name="toppings" value="garlic-chopped 0.75">
+                  <label class="custom-control-label" for="customCheck8">chopped garlic</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck9" name="toppings" value="garlic-roasted 1.50">
+                  <label class="custom-control-label" for="customCheck6">roasted garlic</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck10" name="toppings" value="olives 0.75">
+                  <label class="custom-control-label" for="customCheck10">black olives</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck11" name="toppings" value="basil 1.50">
+                  <label class="custom-control-label" for="customCheck11">basil</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck12" name="toppings" value="spinnach 0.75">
+                  <label class="custom-control-label" for="customCheck12">spinnach</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck13" name="toppings" value="artichoke 1.75">
+                  <label class="custom-control-label" for="customCheck13">artichoke hearts</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <h4 class="card-title">Meats:</h4>
+              <div class="card-text">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck14" name="toppings" value="peperonni 1.50">
+                  <label class="custom-control-label" for="customCheck14">pepperoni</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck15" name="toppings" value="italian-sausage 1.75">
+                  <label class="custom-control-label" for="customCheck15">italian sausage</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck16" name="toppings" value="ham 0.75">
+                  <label class="custom-control-label" for="customCheck16">ham</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck17" name="toppings" value="bacon 1.75"><label class="custom-control-label" for="customCheck17">bacon</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck18" name="toppings" value="chicken 1.50">
+                  <label class="custom-control-label" for="customCheck18">grilled chicken</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck19" name="toppings" value="anchovies 1.75">
+                  <label class="custom-control-label" for="customCheck19">anchovies</label>
+                </div>
+              </div>
+            </div>
+          </div><!--toppings-->
+          <button type="submit" id= "button" class="btn-dark btn-lg">Add to Cart</button>
+        </div>
+      </div>
+    </form>
+    
+    <div class="cart">
+      <div class="card">
+        <h4 class="card-title">Cart</h4>
+        <div class="card-text">
+          <h3>Hello, <span class="userName"></span>!</h3>
+          <p>Your order so far:</p>
           <div id="cart-order">
+          </div>
+          <h3>Total: <span class=total></span></h3>
+          <p id="assAnother" class="btn btn-dark btn-lg">Add Another Pizza</p>
+          <p id="submitOrder" class="btn btn-warning btn-lg">Submit Order</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="order-details">
+      <div class="card">
+        <h4 class="card-title">Thank you for your Order!</h4>
+        <div class="card-text">
+          <h3>Hello, <span class="userName"></span>!</h3>
+          <h5>Order Deatils:</h5>
+          <div id="order-details">
           </div>
         </div>
       </div>
-  
+    </div>
   </div><!--container-->
 </body>
 </html>
