@@ -17,6 +17,17 @@ UserOrder.prototype.assignId = function() {
   return this.currentId;
 }
 
+UserOrder.prototype.findPizza = function(id) {
+  for (let i=0; i<this.pizzas.length; i++) {
+    if (this.pizzas[i]) {
+      if (this.pizzas[i].id == id) {
+        return this.pizzas[i];
+      }
+    }
+  };
+  return false;
+}
+
 UserOrder.prototype.addTotal = function(){
   for (i=0; i<this.pizzas.length; i++) {
     this.priceArr.push(this.pizzas[i].price)
@@ -65,12 +76,32 @@ function displayOrderDetails(newOrderToDisplay) {
   let userCart = $("#cart-order");
   let htmlForUserCart = "";
   newOrderToDisplay.pizzas.forEach(function(pizza){
-    htmlForUserCart += "<li id" + pizza.id + ">" + pizza.size + "</li>";
+    htmlForUserCart += "<li id=" + pizza.id + ">" + pizza.size + " Pizza #" + (pizza.id) + "</li>";
   });
   userCart.html(htmlForUserCart);
 }
 
+function showPizza(pizzaId) {
+  const pizza = newOrder.findPizza(pizzaId);
+
+  $("#show-pizza-info").show();
+  $(".display-size").html(pizza.size);
+  $(".display-toppings").html(pizza.toppingsName + ", ");
+  $(".display-price").html(pizza.price);
+
+
+  
+}
+
+function attachContactListeners() {
+  $("ul#cart-order").on("click", "li", function(){
+    showPizza(this.id);
+  });
+}
+
 $(document).ready(function(){
+  attachContactListeners();
+
   $("#next").click(function(){ 
     $(".create-pizza").show();
     $(".user-info").hide();

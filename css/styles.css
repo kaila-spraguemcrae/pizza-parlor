@@ -26,6 +26,10 @@ body {
   display: none;
 }
 
+#show-pizza-info {
+  display: none;
+}
+
 .make-header {
   margin-bottom: 10px;
 }
