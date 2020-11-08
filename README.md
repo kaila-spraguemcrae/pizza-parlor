@@ -12,7 +12,7 @@ _This weboage was created for week 4's independent project. It uses JavaScript c
 
 ### View Online
 
-_To view my live website, {Name of Page}, visit [https://kaila-spraguemcrae.github.io/pizza-parlor](https://kaila-spraguemcrae.github.io/pizza-parlor)_
+_To view my live website, Pizza Parlor visit [https://kaila-spraguemcrae.github.io/pizza-parlor](https://kaila-spraguemcrae.github.io/pizza-parlor)_
 
 ### Open Locally
 
