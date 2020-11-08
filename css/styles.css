@@ -48,6 +48,10 @@ body {
   margin: 20px 10px 10px 20px;
 }
 
+.btn {
+  cursor: pointer;
+}
+
 .btn-dark {
   background-color: #dd3c27 !important;
   margin: 10px 10px 10px 5px;
@@ -55,6 +59,18 @@ body {
 
 .btn-warning {
   margin: 10px 10px 10px 5px;
+}
+
+#cart-order {
+  cursor: pointer;
+}
+
+#cart-order li:hover {
+  text-decoration: underline;
+}
+
+#show-pizza-info {
+  margin: 10px;
 }
 
 h4 {
@@ -69,4 +85,31 @@ h4 {
 .card-text {
   padding: 8px;
   font-size: 16px;
+}
+
+.cart .card-text {
+  padding: 15px 10px 15px 25px ;
+}
+
+.card-text h3 {
+  padding-top: 15px;
+}
+
+.card-text h5 {
+  padding-top: 40px;
+}
+
+.card-text p {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+#order-details {
+  font-size: 45px;
+}
+
+.click-info {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: gray;
+  margin-left: 20px;
 }
