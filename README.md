@@ -4,11 +4,15 @@
 
 #### By _**Kaila Sprague**_
 
-## Description
+## 🚩 Description
 
-_This weboage was created for week 4's independent project. It uses JavaScript contructors to save pizza choices as objects._
+![webpage on load](./images/webpage-on-load.png "screenshot of webpage on load")
 
-## Setup/Installation Requirements
+_This webpage was created for week 4's independent project. It uses JavaScript contructors to save pizza choices as objects. The webpage is intended to simulate ordering pizza, a user can create their own pizza and add the pizza to a cart. The cart will show the pizza over all price and allow the user to create another pizza._
+
+![create a pizza form](./images/order-page.png "screenshot of the create your own pizza form")
+
+## 🔧 Setup/Installation Requirements
 
 ### View Online
 
@@ -24,9 +28,11 @@ _Go to my GitHub repository here, [https://guthub.com/kaila.spraguemcrae/pizza-p
 3. _To view the code, open the copied directory with Visual Studio Code or your preferred text editor by inputing the command `code .` in your terminal._
 4. _To view the website, open index.html in Chrome or your preferred browser._
 
-## Known Bugs
+## 🐛 Known Bugs
 
-## Support and contact details
+12.04.2020: No known bugs at this time
+
+## 📫 Support and contact details
 
 _If you run into any problems or have any questions please contact me via [email](mailto:kaila.sprague@icloud.com)._
 
@@ -87,7 +93,7 @@ Code: newOrder.addPizza(newPizza);
 Expect: newOrder.order().toEqual([newPizza])
 
 
-## Technologies Used
+## 🛠️ Technologies Used
 
 _This project uses the following technologies:_
 
@@ -98,7 +104,7 @@ _This project uses the following technologies:_
 - Bootstrap
 - GitHub
 
-### License
+### 📘 License
 
 MIT License
 
